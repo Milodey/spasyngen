@@ -1,101 +1,222 @@
-import Image from "next/image";
+// app/page.tsx
+'use client';
+
+import Link from 'next/link';
+import { Star, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex flex-col space-y-16">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Hero Section with Dynamic SVG Background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-400 dark:from-gray-700 dark:via-gray-800 dark:to-yellow-900 transition-colors duration-500">
+        {/* Background Decorative SVG Shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <svg
+            className="absolute left-[-20%] top-[-20%] w-[600px] h-[600px] opacity-20 fill-current text-yellow-600 dark:text-yellow-800 animate-pulse"
+            viewBox="0 0 600 600"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <circle cx="300" cy="300" r="300" />
+          </svg>
+          <svg
+            className="absolute right-[-30%] bottom-[-30%] w-[700px] h-[700px] opacity-20 fill-current text-yellow-600 dark:text-yellow-800"
+            viewBox="0 0 700 700"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Read our docs
-          </a>
+            <rect width="700" height="700" rx="350" />
+          </svg>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        <div className="container relative z-10 text-center px-6 py-10">
+          <div className="flex flex-col items-center space-y-4">
+            <Star className="w-16 h-16 text-yellow-700 dark:text-yellow-400 mb-4 animate-bounce" />
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 dark:text-yellow-300 drop-shadow-lg">
+              Unlock AI-Powered Synthetic Data
+            </h1>
+            <p className="mb-8 text-xl text-gray-800 dark:text-gray-200 max-w-2xl mx-auto">
+              Experience privacy‑first data generation like never before.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+            <Link href="/features">
+              <button className="flex items-center space-x-2 px-8 py-4 bg-yellow-600 text-white rounded-full shadow-xl hover:bg-yellow-700 hover:scale-105 transform transition duration-300">
+                <span>Try SynGen Now</span>
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button className="flex items-center space-x-2 px-8 py-4 border-2 border-yellow-600 text-yellow-700 bg-white rounded-full shadow-xl hover:bg-yellow-600 hover:text-white hover:scale-105 transform transition duration-300">
+                <span>Schedule a Demo</span>
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Decorative wave transition between sections */}
+      <div className="relative w-full -mt-16">
+        <svg
+          className="block w-full h-16 text-white dark:text-gray-800"
+          fill="currentColor"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 320"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <path d="M0,288L48,272C96,256,192,224,288,224C384,224,480,256,576,266.7C672,277,768,267,864,250.7C960,235,1056,213,1152,208C1248,203,1344,213,1392,218.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z" />
+        </svg>
+      </div>
+
+      {/* Why SynGen Section */}
+      <section className="container mx-auto px-6 -mt-8">
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-yellow-300">
+          Why SynGen?
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 transition transform hover:-translate-y-1 hover:shadow-2xl">
+            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">
+              Privacy‑First
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300">
+              Our synthetic data ensures maximum privacy compliance and security.
+            </p>
+          </div>
+          <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 transition transform hover:-translate-y-1 hover:shadow-2xl">
+            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">
+              AI‑Ready
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300">
+              Datasets optimized for machine learning and data science.
+            </p>
+          </div>
+          <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 transition transform hover:-translate-y-1 hover:shadow-2xl">
+            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">
+              Customizable
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300">
+              Tailor‑made data generation to fit your industry needs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="bg-gray-50 dark:bg-gray-800 py-16 transition-colors duration-300">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-yellow-300">
+            How It Works
+          </h2>
+          <div className="flex flex-col md:flex-row justify-around items-center space-y-8 md:space-y-0 md:space-x-8">
+            <div className="text-center space-y-2">
+              <div className="mb-4 h-40 w-40 bg-yellow-200 dark:bg-yellow-600 rounded-full mx-auto shadow-2xl flex items-center justify-center transition transform hover:scale-105">
+                <span className="text-3xl font-bold text-yellow-600 dark:text-yellow-200">1</span>
+              </div>
+              <h3 className="font-bold text-gray-800 dark:text-yellow-300">Upload your data</h3>
+              <p className="text-gray-700 dark:text-gray-300">Easily import files for processing.</p>
+            </div>
+            <div className="text-center space-y-2">
+              <div className="mb-4 h-40 w-40 bg-yellow-200 dark:bg-yellow-600 rounded-full mx-auto shadow-2xl flex items-center justify-center transition transform hover:scale-105">
+                <span className="text-3xl font-bold text-yellow-600 dark:text-yellow-200">2</span>
+              </div>
+              <h3 className="font-bold text-gray-800 dark:text-yellow-300">PII Detection</h3>
+              <p className="text-gray-700 dark:text-gray-300">Safeguard sensitive information.</p>
+            </div>
+            <div className="text-center space-y-2">
+              <div className="mb-4 h-40 w-40 bg-yellow-200 dark:bg-yellow-600 rounded-full mx-auto shadow-2xl flex items-center justify-center transition transform hover:scale-105">
+                <span className="text-3xl font-bold text-yellow-600 dark:text-yellow-200">3</span>
+              </div>
+              <h3 className="font-bold text-gray-800 dark:text-yellow-300">Generate Synthetic Data</h3>
+              <p className="text-gray-700 dark:text-gray-300">Ready for AI and analytics.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="container mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-yellow-300">
+          Use Cases
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center transition transform hover:-translate-y-1 hover:shadow-2xl">
+            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">
+              Healthcare
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300">
+              Generate safe data for clinical trials and research.
+            </p>
+          </div>
+          <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center transition transform hover:-translate-y-1 hover:shadow-2xl">
+            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">
+              Finance
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300">
+              Secure data for fraud detection and risk analysis.
+            </p>
+          </div>
+          <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center transition transform hover:-translate-y-1 hover:shadow-2xl">
+            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">
+              Retail
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300">
+              Analyze consumer behavior without compromising privacy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted By / Testimonials Section */}
+      <section className="bg-gray-100 dark:bg-gray-900 py-16 transition-colors duration-300">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-yellow-300">
+            Trusted By
+          </h2>
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            {/* Replace these placeholders with actual client logos */}
+            <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
+              <p className="font-semibold text-gray-600 dark:text-yellow-300">Logo 1</p>
+            </div>
+            <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
+              <p className="font-semibold text-gray-600 dark:text-yellow-300">Logo 2</p>
+            </div>
+            <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
+              <p className="font-semibold text-gray-600 dark:text-yellow-300">Logo 3</p>
+            </div>
+          </div>
+          <div className="mt-12 text-center">
+            <blockquote className="italic text-lg text-gray-800 dark:text-yellow-300 max-w-xl mx-auto">
+              &quot;SynGen revolutionized our data strategy!&quot;
+            </blockquote>
+            <p className="mt-4 font-bold text-gray-900 dark:text-yellow-300">
+              - Data Scientist, TechCorp
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA: Newsletter Signup Section */}
+      <section className="container mx-auto px-6 py-16 text-center">
+        <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-yellow-300">
+          Stay Updated with SynGen
+        </h2>
+        <p className="mb-8 text-gray-700 dark:text-gray-200 max-w-xl mx-auto">
+          Subscribe to our newsletter for the latest trends in synthetic data and AI.
+        </p>
+        {/* Insert your NewsletterForm component or any sign-up form here */}
+        {/* <NewsletterForm /> */}
+        <div className="mx-auto max-w-md">
+          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 space-x-0 sm:space-x-2">
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="flex-1 px-4 py-3 rounded-l-full sm:rounded-full border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-yellow-600 dark:focus:border-yellow-300 transition"
+            />
+            <button className="bg-yellow-600 text-white rounded-full px-6 py-3 hover:bg-yellow-700 transition font-bold">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
