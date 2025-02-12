@@ -1,11 +1,10 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export", // Required for static export
+  trailingSlash: true, // Ensures correct static URL paths
+
   images: {
-
-
-    domains: ['placekitten.com'],
-
+    domains: ["placekitten.com"],
     remotePatterns: [
       {
         protocol: "https",
@@ -14,6 +13,7 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
+    unoptimized: true, // Required for `next export` (Next.js cannot optimize images in static export mode)
   },
 };
 
