@@ -1,15 +1,27 @@
-// app/page.tsx
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Star, ArrowRight } from 'lucide-react';
+import { Loader } from '@/components/Loader';
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a loading delay (adjust as needed)
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <div className="flex flex-col space-y-16">
-
       {/* Hero Section with Dynamic SVG Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-400 dark:from-gray-700 dark:via-gray-800 dark:to-yellow-900 transition-colors duration-500">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-400 dark:from-black dark:via-gray-900 dark:to-yellow-800 transition-colors duration-500">
         {/* Background Decorative SVG Shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <svg
@@ -39,7 +51,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
-            <Link href="/features">
+            <Link href="https://www.iitg.ac.in/pgapps/syngenM3/" target="" rel="noopener noreferrer">
               <button className="flex items-center space-x-2 px-8 py-4 bg-yellow-600 text-white rounded-full shadow-xl hover:bg-yellow-700 hover:scale-105 transform transition duration-300">
                 <span>Try SynGen Now</span>
                 <ArrowRight className="w-5 h-5" />
@@ -203,7 +215,6 @@ export default function Home() {
           Subscribe to our newsletter for the latest trends in synthetic data and AI.
         </p>
         {/* Insert your NewsletterForm component or any sign-up form here */}
-        {/* <NewsletterForm /> */}
         <div className="mx-auto max-w-md">
           <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 space-x-0 sm:space-x-2">
             <input
