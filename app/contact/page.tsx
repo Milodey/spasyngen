@@ -55,13 +55,13 @@ export default function Contact() {
                         <div className="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md flex flex-col items-center">
                             <Phone className="h-12 w-12 text-yellow-600 dark:text-yellow-400 mb-4" />
                             <h3 className="font-bold text-lg">Call Us</h3>
-                            <p className="text-gray-700 dark:text-gray-300">+1 (555) 123-4567</p>
+                            <p className="text-gray-700 dark:text-gray-300">Comming Soon!</p>
                         </div>
                         {/* Email */}
                         <div className="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md flex flex-col items-center">
                             <Mail className="h-12 w-12 text-yellow-600 dark:text-yellow-400 mb-4" />
                             <h3 className="font-bold text-lg">Email Us</h3>
-                            <p className="text-gray-700 dark:text-gray-300">support@pridella.com</p>
+                            <p className="text-gray-700 dark:text-gray-300">palash.ghosh@iitg.ac.in</p>
                         </div>
                         {/* Live Chat */}
                         <div className="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md flex flex-col items-center">

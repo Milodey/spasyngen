@@ -59,7 +59,7 @@ export default function Home() {
         </div>
 
         <div className="container relative z-10 text-center px-6 py-10">
-          <div className="flex flex-col items-center space-y-4">
+          <div className="flex flex-col items-center space-y">
             <Star className="w-16 h-16 text-yellow-700 dark:text-yellow-400 mb-4 animate-bounce" />
             <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 dark:text-yellow-300 drop-shadow-lg">
               Unlock AI-Powered Synthetic Data

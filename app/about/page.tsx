@@ -7,16 +7,27 @@ export default function About() {
     return (
         <main className="text-gray-800 dark:text-gray-200">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-yellow-300 to-yellow-500 dark:from-gray-600 dark:to-gray-800">
-                <div className="container mx-auto px-6 py-20 text-center">
+            <section className="relative bg-gradient-to-r from-yellow-400 to-yellow-600 dark:from-gray-700 dark:to-gray-900 py-16">
+                <div className="container mx-auto px-6 text-center">
                     <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-md mb-4">
-                        About SynGen
+                        About SynGen Data
                     </h1>
-                    <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
+                    <p className="text-xl text-white max-w-2xl mx-auto">
                         Empowering AI innovation with privacy-first synthetic data solutions.
                     </p>
                 </div>
 
+                {/* Decorative Wave Divider */}
+                <div className="absolute w-full bottom-0">
+                    <svg
+                        className="relative block w-full h-16 text-white dark:text-gray-800"
+                        fill="currentColor"
+                        preserveAspectRatio="none"
+                        viewBox="0 0 1440 320"
+                    >
+                        <path d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,144C672,160,768,192,864,197.3C960,203,1056,181,1152,160C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    </svg>
+                </div>
             </section>
 
             {/* Content Sections */}

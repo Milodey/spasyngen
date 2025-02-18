@@ -2,6 +2,7 @@
 'use client';
 
 import { Award, Briefcase, DollarSign, Layers } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Pricing() {
     return (
@@ -42,11 +43,13 @@ export default function Pricing() {
                                 Free Tier
                             </h2>
                             <p className="text-gray-700 dark:text-gray-300 mb-4">
-                                Limited usage: 1000 rows/month
+                                Limited usage: 5 MB data, 1000 records
                             </p>
-                            <button className="px-4 py-2 bg-yellow-600 text-white rounded-full hover:bg-yellow-700 transition">
-                                Get Started
-                            </button>
+                            <Link href="https://www.iitg.ac.in/pgapps/syngenM3/" target="" rel="noopener noreferrer">
+                                <button className="px-4 py-2 bg-yellow-600 text-white rounded-full hover:bg-yellow-700 transition">
+                                    Get Started
+                                </button>
+                            </Link>
                         </div>
 
                         {/* Pro Plan */}
