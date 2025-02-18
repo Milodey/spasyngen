@@ -3,7 +3,6 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Example interface for blog posts (optional)
 interface BlogPost {
     title: string;
     slug: string;
@@ -13,15 +12,89 @@ interface BlogPost {
 }
 
 const page = () => {
-    // Generate 30 placeholder blog posts
-    const posts: BlogPost[] = Array.from({ length: 30 }, (_, i) => ({
-        title: `Awesome Blog Post #${i + 1}`,
-        slug: `/blog/post-${i + 1}`,
-        date: `2025-02-09`,
-        excerpt:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula justo sit amet sapien tempus bibendum...',
-        image: `https://placekitten.com/400/25${(i % 9) + 1}`, // Variation in placeholder images
-    }));
+    // Static array of 10 synthetic data posts
+    const posts: BlogPost[] = [
+        {
+            title: 'Understanding Synthetic Data: The Basics',
+            slug: '/blog/synthetic-data-basics',
+            date: '2025-02-09',
+            excerpt:
+                'Discover what synthetic data is, why it matters, and how it can revolutionize your data strategy...',
+            image: 'https://placekitten.com/400/301',
+        },
+        {
+            title: 'Top 5 Use Cases for Synthetic Data',
+            slug: '/blog/synthetic-data-use-cases',
+            date: '2025-02-10',
+            excerpt:
+                'Explore the most common real-world applications of synthetic data in healthcare, finance, and beyond...',
+            image: 'https://placekitten.com/400/302',
+        },
+        {
+            title: 'Preserving Privacy with Synthetic Data',
+            slug: '/blog/preserving-privacy-synthetic-data',
+            date: '2025-02-11',
+            excerpt:
+                'Learn how synthetic data can protect sensitive information while still providing actionable insights...',
+            image: 'https://placekitten.com/400/303',
+        },
+        {
+            title: 'Synthetic Data vs. Anonymized Data: Key Differences',
+            slug: '/blog/synthetic-vs-anonymized',
+            date: '2025-02-12',
+            excerpt:
+                'Which method is best for your organization? We break down the pros and cons of each approach...',
+            image: 'https://placekitten.com/400/304',
+        },
+        {
+            title: 'How AI & Machine Learning Benefit From Synthetic Data',
+            slug: '/blog/ai-ml-synthetic-data-benefits',
+            date: '2025-02-13',
+            excerpt:
+                'Uncover the advantages of using synthetic datasets to train and validate machine learning models...',
+            image: 'https://placekitten.com/400/305',
+        },
+        {
+            title: 'Boosting Data Quality with Synthetic Techniques',
+            slug: '/blog/boosting-data-quality-synthetic',
+            date: '2025-02-14',
+            excerpt:
+                'Quality data is vital. Find out how synthetic generation methods can enhance data integrity...',
+            image: 'https://placekitten.com/400/306',
+        },
+        {
+            title: 'Synthetic Data for Startups: A Quick Guide',
+            slug: '/blog/synthetic-data-for-startups',
+            date: '2025-02-15',
+            excerpt:
+                'Learn why early-stage companies are turning to synthetic data for rapid, secure scaling...',
+            image: 'https://placekitten.com/400/307',
+        },
+        {
+            title: 'Common Myths About Synthetic Data Debunked',
+            slug: '/blog/synthetic-data-myths',
+            date: '2025-02-16',
+            excerpt:
+                'Is synthetic data inaccurate or too costly? We tackle the biggest misconceptions head-on...',
+            image: 'https://placekitten.com/400/308',
+        },
+        {
+            title: 'Regulatory Considerations for Synthetic Data',
+            slug: '/blog/synthetic-data-regulations',
+            date: '2025-02-17',
+            excerpt:
+                'Understand how laws like GDPR and HIPAA view synthetic data, and what you need to stay compliant...',
+            image: 'https://placekitten.com/400/309',
+        },
+        {
+            title: 'Future Trends in Synthetic Data Generation',
+            slug: '/blog/future-trends-synthetic-data',
+            date: '2025-02-18',
+            excerpt:
+                'What’s next for synthetic data? A sneak peek at emerging tools, techniques, and innovations...',
+            image: 'https://placekitten.com/400/310',
+        },
+    ];
 
     return (
         <main className="text-gray-800 dark:text-gray-200">
@@ -63,8 +136,8 @@ const page = () => {
                                     <Image
                                         src={post.image}
                                         alt={`Image for ${post.title}`}
-                                        layout="fill"
-                                        objectFit="cover"
+                                        fill
+                                        style={{ objectFit: 'cover' }}
                                     />
                                 </div>
                                 {/* Content */}

@@ -130,37 +130,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* How It Works Section with 5 Steps */}
       <section className="bg-gray-50 dark:bg-gray-800 py-16 transition-colors duration-300">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-yellow-300">
             How It Works
           </h2>
-          <div className="flex flex-col md:flex-row justify-around items-center space-y-8 md:space-y-0 md:space-x-8">
+          {/* Use a grid layout for 5 steps */}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            {/* Step 1 */}
             <div className="text-center space-y-2">
               <div className="mb-4 h-40 w-40 bg-yellow-200 dark:bg-yellow-600 rounded-full mx-auto shadow-2xl flex items-center justify-center transition transform hover:scale-105">
                 <span className="text-3xl font-bold text-yellow-600 dark:text-yellow-200">1</span>
               </div>
-              <h3 className="font-bold text-gray-800 dark:text-yellow-300">Upload your data</h3>
+              <h3 className="font-bold text-gray-800 dark:text-yellow-300">Upload your Data</h3>
               <p className="text-gray-700 dark:text-gray-300">Easily import files for processing.</p>
             </div>
+
+            {/* Step 2 */}
             <div className="text-center space-y-2">
               <div className="mb-4 h-40 w-40 bg-yellow-200 dark:bg-yellow-600 rounded-full mx-auto shadow-2xl flex items-center justify-center transition transform hover:scale-105">
                 <span className="text-3xl font-bold text-yellow-600 dark:text-yellow-200">2</span>
               </div>
               <h3 className="font-bold text-gray-800 dark:text-yellow-300">PII Detection</h3>
-              <p className="text-gray-700 dark:text-gray-300">Safeguard sensitive information.</p>
+              <p className="text-gray-700 dark:text-gray-300">Identify and protect sensitive information.</p>
             </div>
+
+            {/* Step 3 */}
             <div className="text-center space-y-2">
               <div className="mb-4 h-40 w-40 bg-yellow-200 dark:bg-yellow-600 rounded-full mx-auto shadow-2xl flex items-center justify-center transition transform hover:scale-105">
                 <span className="text-3xl font-bold text-yellow-600 dark:text-yellow-200">3</span>
               </div>
               <h3 className="font-bold text-gray-800 dark:text-yellow-300">Generate Synthetic Data</h3>
-              <p className="text-gray-700 dark:text-gray-300">Ready for AI and analytics.</p>
+              <p className="text-gray-700 dark:text-gray-300">Anonymize and prepare for AI & analytics.</p>
+            </div>
+
+            {/* Step 4 */}
+            <div className="text-center space-y-2">
+              <div className="mb-4 h-40 w-40 bg-yellow-200 dark:bg-yellow-600 rounded-full mx-auto shadow-2xl flex items-center justify-center transition transform hover:scale-105">
+                <span className="text-3xl font-bold text-yellow-600 dark:text-yellow-200">4</span>
+              </div>
+              <h3 className="font-bold text-gray-800 dark:text-yellow-300">Validate & Review</h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                Ensure data accuracy before finalizing.
+              </p>
+            </div>
+
+            {/* Step 5 */}
+            <div className="text-center space-y-2">
+              <div className="mb-4 h-40 w-40 bg-yellow-200 dark:bg-yellow-600 rounded-full mx-auto shadow-2xl flex items-center justify-center transition transform hover:scale-105">
+                <span className="text-3xl font-bold text-yellow-600 dark:text-yellow-200">5</span>
+              </div>
+              <h3 className="font-bold text-gray-800 dark:text-yellow-300">Download or Integrate</h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                Seamlessly export synthetic data into your workflows.
+              </p>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Use Cases Section */}
       <section className="container mx-auto px-6">
@@ -218,7 +247,7 @@ export default function Home() {
               &quot;SynGenData revolutionized our data strategy!&quot;
             </blockquote>
             <p className="mt-4 font-bold text-gray-900 dark:text-yellow-300">
-              - Data Scientist, TechCorp
+              - Data Scientist
             </p>
           </div>
         </div>
@@ -269,6 +298,53 @@ export default function Home() {
         </button>
 
       )}
+
+      <footer className="bg-gray-100 dark:bg-gray-900 py-8">
+        <div className="container mx-auto px-6 text-center md:text-left">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-4 md:space-y-0">
+            {/* Left: Branding or Company Info */}
+            <div className="text-center md:text-left">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-yellow-300">
+                SynGen Data
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 mt-2">
+                Privacy‑first synthetic data solutions
+              </p>
+            </div>
+
+            {/* Center: Quick Links */}
+            <div className="flex flex-col space-y-2">
+              <Link
+                href="/about"
+                className="text-gray-600 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-300 transition"
+              >
+                About Us
+              </Link>
+              <Link
+                href="/contact"
+                className="text-gray-600 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-300 transition"
+              >
+                Contact
+              </Link>
+              <Link
+                href="/pricing"
+                className="text-gray-600 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-300 transition"
+              >
+                Pricing
+              </Link>
+            </div>
+          </div>
+
+          <hr className="my-6 border-gray-300 dark:border-gray-700" />
+
+          <div className="text-center">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              © 2025 SynGen Data Ltd. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
     </div>
   );
 }

@@ -50,7 +50,7 @@ export function Navbar() {
                         href="/"
                         className="text-xl font-bold text-black dark:text-yellow-300 hover:opacity-80 transition-opacity"
                     >
-                        SynGenData.Ai
+                        SynGenData
                     </Link>
                 </HoverBorderGradient>
 
