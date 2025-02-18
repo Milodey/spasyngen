@@ -7,13 +7,31 @@ import { Loader } from '@/components/Loader';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   useEffect(() => {
-    // Simulate a loading delay (adjust as needed)
     const timer = setTimeout(() => setIsLoading(false), 1000);
-    return () => clearTimeout(timer);
+
+    // Handle scroll event to show/hide scroll-to-top button
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowScrollToTop(true);
+      } else {
+        setShowScrollToTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   if (isLoading) {
     return <Loader />;
   }
@@ -53,7 +71,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
             <Link href="https://www.iitg.ac.in/pgapps/syngenM3/" target="" rel="noopener noreferrer">
               <button className="flex items-center space-x-2 px-8 py-4 bg-yellow-600 text-white rounded-full shadow-xl hover:bg-yellow-700 hover:scale-105 transform transition duration-300">
-                <span>Try SynGen Now</span>
+                <span>Try SynGen Data Now</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
             </Link>
@@ -82,7 +100,7 @@ export default function Home() {
       {/* Why SynGen Section */}
       <section className="container mx-auto px-6 -mt-8">
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-yellow-300">
-          Why SynGen?
+          Why SynGen Data?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 transition transform hover:-translate-y-1 hover:shadow-2xl">
@@ -147,7 +165,7 @@ export default function Home() {
       {/* Use Cases Section */}
       <section className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-yellow-300">
-          Use Cases
+          Use Cases <span className='text-sm text-gray-500'>(Comming Soon !)</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center transition transform hover:-translate-y-1 hover:shadow-2xl">
@@ -197,7 +215,7 @@ export default function Home() {
           </div>
           <div className="mt-12 text-center">
             <blockquote className="italic text-lg text-gray-800 dark:text-yellow-300 max-w-xl mx-auto">
-              &quot;SynGen revolutionized our data strategy!&quot;
+              &quot;SynGenData revolutionized our data strategy!&quot;
             </blockquote>
             <p className="mt-4 font-bold text-gray-900 dark:text-yellow-300">
               - Data Scientist, TechCorp
@@ -209,7 +227,7 @@ export default function Home() {
       {/* Final CTA: Newsletter Signup Section */}
       <section className="container mx-auto px-6 py-16 text-center">
         <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-yellow-300">
-          Stay Updated with SynGen
+          Stay Updated with SynGen Data AI
         </h2>
         <p className="mb-8 text-gray-700 dark:text-gray-200 max-w-xl mx-auto">
           Subscribe to our newsletter for the latest trends in synthetic data and AI.
@@ -228,6 +246,29 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {showScrollToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 bg-yellow-600 text-white p-4 rounded-full shadow-lg hover:bg-yellow-700 transition-transform transform hover:scale-110 flex items-center justify-center"
+          aria-label="Scroll to top"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 15l7-7 7 7"
+            />
+          </svg>
+        </button>
+
+      )}
     </div>
   );
 }
