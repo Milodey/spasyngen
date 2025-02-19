@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Star, ArrowRight } from 'lucide-react';
 import { Loader } from '@/components/Loader';
 
@@ -194,29 +195,26 @@ export default function Home() {
       {/* Use Cases Section */}
       <section className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-yellow-300">
-          Use Cases <span className='text-sm text-gray-500'>(Comming Soon !)</span>
+          Use Cases <span className='text-gray-500 italic'> (Comming Soon !)</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center transition transform hover:-translate-y-1 hover:shadow-2xl">
-            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">
-              Healthcare
-            </h3>
+          <div className="border rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center max-w-[400px]">
+            <Image src="/doctor.webp" width={400} height={300} alt="Healthcare" className="mx-auto mb-5 rounded-2xl" />
+            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">Healthcare</h3>
             <p className="text-gray-700 dark:text-gray-300">
               Generate safe data for clinical trials and research.
             </p>
           </div>
-          <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center transition transform hover:-translate-y-1 hover:shadow-2xl">
-            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">
-              Finance
-            </h3>
+          <div className="border rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center max-w-[400px]">
+            <Image src="/finance.webp" width={400} height={300} alt="Finance" className="mx-auto mb-5 rounded-2xl" />
+            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">Finance</h3>
             <p className="text-gray-700 dark:text-gray-300">
               Secure data for fraud detection and risk analysis.
             </p>
           </div>
-          <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center transition transform hover:-translate-y-1 hover:shadow-2xl">
-            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">
-              Retail
-            </h3>
+          <div className="border rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center max-w-[400px]">
+            <Image src="/retail.webp" width={400} height={300} alt="Retail" className="mx-auto mb-5 rounded-2xl" />
+            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">Retail</h3>
             <p className="text-gray-700 dark:text-gray-300">
               Analyze consumer behavior without compromising privacy.
             </p>
@@ -230,8 +228,8 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-yellow-300">
             Trusted By
           </h2>
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            {/* Replace these placeholders with actual client logos */}
+          {/* <div className="flex flex-wrap justify-center items-center gap-6">
+            Replace these placeholders with actual client logos
             <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
               <p className="font-semibold text-gray-600 dark:text-yellow-300">Logo 1</p>
             </div>
@@ -241,7 +239,7 @@ export default function Home() {
             <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
               <p className="font-semibold text-gray-600 dark:text-yellow-300">Logo 3</p>
             </div>
-          </div>
+          </div> */}
           <div className="mt-12 text-center">
             <blockquote className="italic text-lg text-gray-800 dark:text-yellow-300 max-w-xl mx-auto">
               &quot;SynGenData revolutionized our data strategy!&quot;

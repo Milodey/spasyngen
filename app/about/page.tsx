@@ -16,6 +16,18 @@ export default function About() {
                         Empowering AI innovation with privacy-first synthetic data solutions.
                     </p>
                 </div>
+
+                 {/* Wave Divider */}
+                 <div className="absolute w-full bottom-0">
+                    <svg
+                        className="relative block w-full h-16 text-white dark:text-gray-800"
+                        fill="currentColor"
+                        preserveAspectRatio="none"
+                        viewBox="0 0 1440 320"
+                    >
+                        <path d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,144C672,160,768,192,864,197.3C960,203,1056,181,1152,160C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+                    </svg>
+                </div>
             </section>
 
             {/* Content Sections */}
