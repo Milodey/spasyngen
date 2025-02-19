@@ -20,7 +20,7 @@ const page = () => {
             date: '2025-02-09',
             excerpt:
                 'Discover what synthetic data is, why it matters, and how it can revolutionize your data strategy...',
-            image: 'https://placekitten.com/400/301',
+            image: '/blog.webp',
         },
         {
             title: 'Top 5 Use Cases for Synthetic Data',
@@ -28,7 +28,7 @@ const page = () => {
             date: '2025-02-10',
             excerpt:
                 'Explore the most common real-world applications of synthetic data in healthcare, finance, and beyond...',
-            image: 'https://placekitten.com/400/302',
+            image: '/blog.webp',
         },
         {
             title: 'Preserving Privacy with Synthetic Data',
@@ -36,7 +36,7 @@ const page = () => {
             date: '2025-02-11',
             excerpt:
                 'Learn how synthetic data can protect sensitive information while still providing actionable insights...',
-            image: 'https://placekitten.com/400/303',
+            image: '/blog.webp',
         },
         {
             title: 'Synthetic Data vs. Anonymized Data: Key Differences',
@@ -44,7 +44,7 @@ const page = () => {
             date: '2025-02-12',
             excerpt:
                 'Which method is best for your organization? We break down the pros and cons of each approach...',
-            image: 'https://placekitten.com/400/304',
+            image: '/blog.webp',
         },
         {
             title: 'How AI & Machine Learning Benefit From Synthetic Data',
@@ -52,7 +52,7 @@ const page = () => {
             date: '2025-02-13',
             excerpt:
                 'Uncover the advantages of using synthetic datasets to train and validate machine learning models...',
-            image: 'https://placekitten.com/400/305',
+            image: '/blog.webp',
         },
         {
             title: 'Boosting Data Quality with Synthetic Techniques',
@@ -60,7 +60,7 @@ const page = () => {
             date: '2025-02-14',
             excerpt:
                 'Quality data is vital. Find out how synthetic generation methods can enhance data integrity...',
-            image: 'https://placekitten.com/400/306',
+            image: '/blog.webp',
         },
         {
             title: 'Synthetic Data for Startups: A Quick Guide',
@@ -68,7 +68,7 @@ const page = () => {
             date: '2025-02-15',
             excerpt:
                 'Learn why early-stage companies are turning to synthetic data for rapid, secure scaling...',
-            image: 'https://placekitten.com/400/307',
+            image: '/blog.webp',
         },
         {
             title: 'Common Myths About Synthetic Data Debunked',
@@ -76,7 +76,7 @@ const page = () => {
             date: '2025-02-16',
             excerpt:
                 'Is synthetic data inaccurate or too costly? We tackle the biggest misconceptions head-on...',
-            image: 'https://placekitten.com/400/308',
+            image: '/blog.webp',
         },
         {
             title: 'Regulatory Considerations for Synthetic Data',
@@ -84,7 +84,7 @@ const page = () => {
             date: '2025-02-17',
             excerpt:
                 'Understand how laws like GDPR and HIPAA view synthetic data, and what you need to stay compliant...',
-            image: 'https://placekitten.com/400/309',
+            image: '/blog.webp',
         },
         {
             title: 'Future Trends in Synthetic Data Generation',
@@ -92,7 +92,7 @@ const page = () => {
             date: '2025-02-18',
             excerpt:
                 'What’s next for synthetic data? A sneak peek at emerging tools, techniques, and innovations...',
-            image: 'https://placekitten.com/400/310',
+            image: '/blog.webp',
         },
     ];
 
@@ -151,11 +151,14 @@ const page = () => {
                                     <p className="text-gray-700 dark:text-gray-300 mb-4">
                                         {post.excerpt}
                                     </p>
-                                    <Link href={post.slug}>
-                                        <button className="px-4 py-2 bg-yellow-600 text-white rounded-full hover:bg-yellow-700 transition">
-                                            Read More
-                                        </button>
-                                    </Link>
+                                    {/* <Link
+                                    
+                                    // href={post.slug}
+                                    > */}
+                                    <button className="px-4 py-2 bg-yellow-600 text-white rounded-full hover:bg-yellow-700 transition">
+                                        Read More
+                                    </button>
+                                    {/* </Link> */}
                                 </div>
                             </div>
                         ))}
