@@ -1,10 +1,10 @@
-// app/contact/page.tsx
 'use client';
 
-import { Phone, Mail, MessageCircle } from 'lucide-react';
+import { useState } from 'react';
+import { Phone, Mail, MessageCircle, CheckCircle } from 'lucide-react';
 import LiveChat from '@/components/LiveChat';
 
-// Calendly Integration (Embed Widget)
+// Calendly Integration
 const CalendlyWidget = () => {
     return (
         <div className="flex justify-center">
@@ -18,6 +18,32 @@ const CalendlyWidget = () => {
 };
 
 export default function Contact() {
+    const [showForm, setShowForm] = useState(true);
+    const [status, setStatus] = useState<string>('');
+
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '';
+
+        formData.append('access_key', accessKey);
+
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData,
+        });
+
+        const result = await response.json();
+        setStatus(result.message ? 'Done ✅' : 'Something went wrong ❌');
+
+        // Wait for 2 seconds, then hide form
+        setTimeout(() => {
+            setShowForm(false);
+            setStatus('');
+        }, 2000);
+    };
+
     return (
         <main className="text-gray-800 dark:text-gray-200">
             {/* Hero Section */}
@@ -30,21 +56,9 @@ export default function Contact() {
                         We’re here to help. Reach out for inquiries, demos, or support.
                     </p>
                 </div>
-
-                {/* Wave Divider */}
-                <div className="absolute w-full bottom-0">
-                    <svg
-                        className="relative block w-full h-16 text-white dark:text-gray-800"
-                        fill="currentColor"
-                        preserveAspectRatio="none"
-                        viewBox="0 0 1440 320"
-                    >
-                        <path d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,144C672,160,768,192,864,197.3C960,203,1056,181,1152,160C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                    </svg>
-                </div>
             </section>
 
-            {/* Contact Methods Section */}
+            {/* Contact Methods */}
             <section className="bg-white dark:bg-gray-900 py-16">
                 <div className="container mx-auto px-6 text-center">
                     <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-yellow-300">
@@ -55,7 +69,7 @@ export default function Contact() {
                         <div className="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md flex flex-col items-center">
                             <Phone className="h-12 w-12 text-yellow-600 dark:text-yellow-400 mb-4" />
                             <h3 className="font-bold text-lg">Call Us</h3>
-                            <p className="text-gray-700 dark:text-gray-300">Comming Soon!</p>
+                            <p className="text-gray-700 dark:text-gray-300">Coming Soon!</p>
                         </div>
                         {/* Email */}
                         <div className="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md flex flex-col items-center">
@@ -83,57 +97,42 @@ export default function Contact() {
                 </div>
             </section>
 
-            {/* Contact Form */}
+            {/* Web3Forms Contact Form - Hide after success */}
             <section className="bg-white dark:bg-gray-900 py-16">
                 <div className="container mx-auto px-6">
                     <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-yellow-300">
                         Contact Form
                     </h2>
-                    <form
-                        className="max-w-lg mx-auto space-y-4 p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg"
-                        action="/api/contact"
-                        method="POST"
-                    >
-                        <div>
-                            <label className="block mb-1 font-bold text-gray-700 dark:text-gray-300">
-                                Name
-                            </label>
-                            <input
-                                type="text"
-                                name="name"
-                                required
-                                className="w-full border rounded px-4 py-3 bg-white dark:bg-gray-700"
-                            />
+
+                    {showForm ? (
+                        <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-4 p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg">
+                            <div>
+                                <label className="block mb-1 font-bold text-gray-700 dark:text-gray-300">Name</label>
+                                <input type="text" name="name" required className="w-full border rounded px-4 py-3 bg-white dark:bg-gray-700" />
+                            </div>
+                            <div>
+                                <label className="block mb-1 font-bold text-gray-700 dark:text-gray-300">Email</label>
+                                <input type="email" name="email" required className="w-full border rounded px-4 py-3 bg-white dark:bg-gray-700" />
+                            </div>
+                            <div>
+                                <label className="block mb-1 font-bold text-gray-700 dark:text-gray-300">Message</label>
+                                <textarea name="message" required className="w-full border rounded px-4 py-3 bg-white dark:bg-gray-700" rows={5}></textarea>
+                            </div>
+                            <button type="submit" className="w-full px-4 py-3 bg-yellow-600 text-white rounded-full hover:bg-yellow-700 transition">
+                                Send Message
+                            </button>
+                            {status && (
+                                <div className="text-center text-gray-700 dark:text-gray-300">
+                                    {status}
+                                </div>
+                            )}
+                        </form>
+                    ) : (
+                        <div className="text-center text-green-600 dark:text-green-400 text-xl font-bold">
+                            <CheckCircle className="w-8 h-8 mx-auto mb-2" />
+                            Done ✅
                         </div>
-                        <div>
-                            <label className="block mb-1 font-bold text-gray-700 dark:text-gray-300">
-                                Email
-                            </label>
-                            <input
-                                type="email"
-                                name="email"
-                                required
-                                className="w-full border rounded px-4 py-3 bg-white dark:bg-gray-700"
-                            />
-                        </div>
-                        <div>
-                            <label className="block mb-1 font-bold text-gray-700 dark:text-gray-300">
-                                Message
-                            </label>
-                            <textarea
-                                name="message"
-                                required
-                                className="w-full border rounded px-4 py-3 bg-white dark:bg-gray-700"
-                                rows={5}
-                            ></textarea>
-                        </div>
-                        <button
-                            type="submit"
-                            className="w-full px-4 py-3 bg-yellow-600 text-white rounded-full hover:bg-yellow-700 transition"
-                        >
-                            Send Message
-                        </button>
-                    </form>
+                    )}
                 </div>
             </section>
 
@@ -144,7 +143,7 @@ export default function Contact() {
                         Chat with Us
                     </h2>
                     <p className="text-gray-700 dark:text-gray-300 mb-8">
-                        Need instant support? Use our live chat feature (Comming Soon).
+                        Need instant support? Use our live chat feature.
                     </p>
                     <LiveChat />
                 </div>
