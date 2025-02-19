@@ -144,7 +144,7 @@ export default function Contact() {
                         Chat with Us
                     </h2>
                     <p className="text-gray-700 dark:text-gray-300 mb-8">
-                        Need instant support? Use our live chat feature.
+                        Need instant support? Use our live chat feature (Comming Soon).
                     </p>
                     <LiveChat />
                 </div>
