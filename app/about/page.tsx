@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { Users, Flag, MapPin, Rocket } from 'lucide-react';
+import { CldImage } from 'next-cloudinary';
 
 export default function About() {
     return (
@@ -17,8 +17,8 @@ export default function About() {
                     </p>
                 </div>
 
-                 {/* Wave Divider */}
-                 <div className="absolute w-full bottom-0">
+                {/* Wave Divider */}
+                <div className="absolute w-full bottom-0">
                     <svg
                         className="relative block w-full h-16 text-white dark:text-gray-800"
                         fill="currentColor"
@@ -47,7 +47,7 @@ export default function About() {
                             </p>
                         </div>
                         <div className="md:w-1/2 flex justify-center">
-                            <Image src="/founding.webp" alt="Founding Moment" width={400} height={400} className="rounded-lg shadow-lg" />
+                            <CldImage src="syngen/p2blstcigka6kwq7xvmj" alt="Founding Moment" width={400} height={400} className="rounded-lg shadow-lg" />
                         </div>
                     </div>
 
@@ -64,7 +64,7 @@ export default function About() {
                             </p>
                         </div>
                         <div className="md:w-1/2 flex justify-center">
-                            <Image src="/team.webp" alt="Our Team" width={400} height={400} className="rounded-lg shadow-lg" />
+                            <CldImage src="syngen/j2hlgg3jvwbxh7dtcyv1" alt="Our Team" width={400} height={400} className="rounded-lg shadow-lg" />
                         </div>
                     </div>
 
@@ -81,7 +81,7 @@ export default function About() {
                             </p>
                         </div>
                         <div className="md:w-1/2 flex justify-center">
-                            <Image src="/privacy.webp" alt="Our Partnerships" width={400} height={400} className="rounded-lg shadow-lg" />
+                            <CldImage src="syngen/hw5oidy4x4qvb4ghwygk" alt="Our Partnerships" width={400} height={400} className="rounded-lg shadow-lg" />
                         </div>
                     </div>
 
@@ -98,7 +98,7 @@ export default function About() {
                             </p>
                         </div>
                         <div className="md:w-1/2 flex justify-center">
-                            <Image src="/vision.webp" alt="Future Plans" width={400} height={400} className="rounded-lg shadow-lg" />
+                            <CldImage src="syngen/privacy" alt="Future Plans" width={400} height={400} className="rounded-lg shadow-lg" />
                         </div>
                     </div>
                 </div>

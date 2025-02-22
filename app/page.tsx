@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Star, ArrowRight } from 'lucide-react';
 import { Loader } from '@/components/Loader';
+import { CldImage } from 'next-cloudinary';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -199,21 +199,30 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="border rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center max-w-[400px]">
-            <Image src="/doctor.webp" width={400} height={300} alt="Healthcare" className="mx-auto mb-5 rounded-2xl" />
-            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">Healthcare</h3>
+            <CldImage
+              src="syngen/khtscduyzvw9zwh3gszi" // Use this sample image or upload your own via the Media Explorer
+              width="500" // Transform the image: auto-crop to square aspect_ratio
+              height="500"
+              crop={{
+                type: 'auto',
+                source: true
+              }}
+              alt='Healthcare'
+              className="mx-auto mb-5 rounded-2xl"
+            />            <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">Healthcare</h3>
             <p className="text-gray-700 dark:text-gray-300">
               Generate safe data for clinical trials and research.
             </p>
           </div>
           <div className="border rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center max-w-[400px]">
-            <Image src="/finance.webp" width={400} height={300} alt="Finance" className="mx-auto mb-5 rounded-2xl" />
+            <CldImage src="syngen/b9vuhscyefr6mxxsqt58" width={400} height={300} alt="Finance" className="mx-auto mb-5 rounded-2xl" />
             <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">Finance</h3>
             <p className="text-gray-700 dark:text-gray-300">
               Secure data for fraud detection and risk analysis.
             </p>
           </div>
           <div className="border rounded-2xl shadow-lg bg-white dark:bg-gray-800 text-center max-w-[400px]">
-            <Image src="/retail.webp" width={400} height={300} alt="Retail" className="mx-auto mb-5 rounded-2xl" />
+            <CldImage src="syngen/retail" width={400} height={300} alt="Retail" className="mx-auto mb-5 rounded-2xl" />
             <h3 className="font-bold mb-2 text-gray-800 dark:text-yellow-300">Retail</h3>
             <p className="text-gray-700 dark:text-gray-300">
               Analyze consumer behavior without compromising privacy.
