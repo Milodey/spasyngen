@@ -10,7 +10,7 @@ export default function About() {
             <section className="relative bg-gradient-to-r from-yellow-400 to-yellow-600 dark:from-gray-700 dark:to-gray-900 py-16 text-center">
                 <div className="container mx-auto px-6">
                     <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-md mb-4">
-                        About SynGen Data
+                        About SynGenData
                     </h1>
                     <p className="text-xl text-white max-w-2xl mx-auto">
                         Empowering AI innovation with privacy-first synthetic data solutions.
@@ -42,7 +42,7 @@ export default function About() {
                                 <span>Our Story</span>
                             </h2>
                             <p className="leading-relaxed text-lg">
-                                SynGen was built to revolutionize data privacy while empowering AI innovation.
+                                SynGenData was built to revolutionize data privacy while empowering AI innovation.
                                 Our journey started with a mission to solve the challenges of data privacy in the age of AI.
                             </p>
                         </div>

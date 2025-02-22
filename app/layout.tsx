@@ -8,8 +8,8 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SynGen - AI-Powered Synthetic Data",
-  description: "SynGen - AI-Powered Synthetic Data",
+  title: "SynGenData - AI-Powered Synthetic Data",
+  description: "SynGenData - AI-Powered Synthetic Data",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

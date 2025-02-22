@@ -72,7 +72,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
             <Link href="https://www.iitg.ac.in/pgapps/syngenM3/" target="" rel="noopener noreferrer">
               <button className="flex items-center space-x-2 px-8 py-4 bg-yellow-600 text-white rounded-full shadow-xl hover:bg-yellow-700 hover:scale-105 transform transition duration-300">
-                <span>Try SynGen Data Now</span>
+                <span>Try SynGenData Now</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
             </Link>
@@ -101,7 +101,7 @@ export default function Home() {
       {/* Why SynGen Section */}
       <section className="container mx-auto px-6 -mt-8">
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-yellow-300">
-          Why SynGen Data?
+          Why SynGenData?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-8 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg bg-white dark:bg-gray-800 transition transform hover:-translate-y-1 hover:shadow-2xl">
@@ -254,7 +254,7 @@ export default function Home() {
       {/* Final CTA: Newsletter Signup Section */}
       <section className="container mx-auto px-6 py-16 text-center">
         <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-yellow-300">
-          Stay Updated with SynGen Data AI
+          Stay Updated with SynGenData AI
         </h2>
         <p className="mb-8 text-gray-700 dark:text-gray-200 max-w-xl mx-auto">
           Subscribe to our newsletter for the latest trends in synthetic data and AI.
@@ -303,7 +303,7 @@ export default function Home() {
             {/* Left: Branding or Company Info */}
             <div className="text-center md:text-left">
               <h3 className="text-xl font-bold text-gray-800 dark:text-yellow-300">
-                SynGen Data
+                SynGenData
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mt-2">
                 Privacy‑first synthetic data solutions
@@ -337,7 +337,7 @@ export default function Home() {
 
           <div className="text-center">
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              © 2025 SynGen Data Ltd. All rights reserved.
+              © 2025 SynGenData Ltd. All rights reserved.
             </p>
           </div>
         </div>

@@ -14,7 +14,7 @@ export default function Features() {
                         Features
                     </h1>
                     <p className="text-xl text-white max-w-2xl mx-auto">
-                        Discover how SynGen is redefining synthetic data generation.
+                        Discover how SynGenData is redefining synthetic data generation.
                     </p>
                 </div>
 
