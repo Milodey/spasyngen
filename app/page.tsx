@@ -11,7 +11,7 @@ export default function Home() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000);
+    const timer = setTimeout(() => setIsLoading(false), 200);
 
     // Handle scroll event to show/hide scroll-to-top button
     const handleScroll = () => {
