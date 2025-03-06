@@ -45,7 +45,7 @@ export default function Pricing() {
                             <p className="text-gray-700 dark:text-gray-300 mb-4">
                                 Limited usage: 5 MB data, 1000 records
                             </p>
-                            <Link href="https://www.iitg.ac.in/pgapps/syngenM3/" target="" rel="noopener noreferrer">
+                            <Link href="https://syngendata.ai/studio" target="" rel="noopener noreferrer">
                                 <button className="px-4 py-2 bg-yellow-600 text-white rounded-full hover:bg-yellow-700 transition">
                                     Get Started
                                 </button>

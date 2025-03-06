@@ -260,15 +260,40 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-1 transition-colors duration-300">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
+          {/* Image on the left */}
+          <div className="md:w-2/3 flex justify-center mb-6 md:mb-0">
+            <CldImage
+              src="syngen/cpxju4gfabbnih22ccf4"
+              alt="Funding Organization Logo"
+              width={300} height={300}
+              className=""
+            />
+          </div>
+
+          {/* Text on the right */}
+          <div className="md:w-2/3 text-center md:text-left">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-yellow-300">
+              Project is funded by
+            </h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300">
+              <strong>IDEAS - Institute Of Data Engineering, Analytics and Science Foundation</strong>
+              <br />
+              <strong>Technology Innovation Hub, Indian Statistical Institute</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA: Newsletter Signup Section */}
-      <section className="container mx-auto px-6 py-16 text-center">
+      {/* <section className="container mx-auto px-6 py-16 text-center">
         <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-yellow-300">
           Stay Updated with SynGenData AI
         </h2>
         <p className="mb-8 text-gray-700 dark:text-gray-200 max-w-xl mx-auto">
           Subscribe to our newsletter for the latest trends in synthetic data and AI.
         </p>
-        {/* Insert your NewsletterForm component or any sign-up form here */}
         <div className="mx-auto max-w-md">
           <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 space-x-0 sm:space-x-2">
             <input
@@ -281,7 +306,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
       {showScrollToTop && (
         <button
           onClick={scrollToTop}
