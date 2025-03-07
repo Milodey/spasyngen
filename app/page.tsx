@@ -260,31 +260,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-1 transition-colors duration-300">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
-          {/* Image on the left */}
-          <div className="md:w-2/3 flex justify-center mb-6 md:mb-0">
+      <section className="py-6 transition-colors duration-300 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-6 flex flex-col items-center space-y-6 md:flex-row md:justify-between md:space-y-0">
+          {/* Logos */}
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-12 w-full md:w-auto">
+            <CldImage
+              src="syngen/nghn1zonnzcvvajhcrcg"
+              alt="Department of Science & Technology Logo"
+              width={500} height={100}
+              className="rounded-lg"
+            />
+            <CldImage
+              src="syngen/smalghw76wubiqlvbcpe"
+              alt="NM-ICPS Logo"
+              width={150} height={100}
+              className="rounded-lg"
+            />
             <CldImage
               src="syngen/cpxju4gfabbnih22ccf4"
-              alt="Funding Organization Logo"
-              width={300} height={300}
-              className=""
+              alt="IDEAS - Technology Innovation Hub Logo"
+              width={150} height={100}
+              className="rounded-lg"
             />
           </div>
 
-          {/* Text on the right */}
-          <div className="md:w-2/3 text-center md:text-left">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-yellow-300">
-              Project is funded by
+          {/* Text */}
+          <div className="text-center md:text-left max-w-lg px-4 w-full">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-yellow-300 mb-2">
+              Project Funding
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              <strong>IDEAS - Institute Of Data Engineering, Analytics and Science Foundation</strong>
-              <br />
-              <strong>Technology Innovation Hub, Indian Statistical Institute</strong>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
+              This project is proudly supported by the <strong>Institute Of Data Engineering, Analytics and Science Foundation (IDEAS)</strong>,
+              operating under the <strong>Technology Innovation Hub at the Indian Statistical Institute</strong>.
+              It is funded by the <strong>Department of Science & Technology (DST) under the National Mission on Interdisciplinary Cyber-Physical Systems (NM-ICPS)</strong>.
             </p>
           </div>
         </div>
       </section>
+
+
 
       {/* Final CTA: Newsletter Signup Section */}
       {/* <section className="container mx-auto px-6 py-16 text-center">
