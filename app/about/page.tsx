@@ -47,7 +47,7 @@ export default function About() {
                             </p>
                         </div>
                         <div className="md:w-1/2 flex justify-center">
-                            <CldImage src="syngen/p2blstcigka6kwq7xvmj" alt="Founding Moment" width={400} height={400} className="rounded-lg shadow-lg" />
+                            <CldImage src="syngen/vifqc61i2ykzxo6vch5v" alt="Founding Moment" width={400} height={400} className="rounded-lg shadow-lg" />
                         </div>
                     </div>
 

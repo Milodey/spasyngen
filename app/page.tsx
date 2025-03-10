@@ -287,14 +287,18 @@ export default function Home() {
           {/* Text */}
           <div className="text-center md:text-left max-w-lg px-4 w-full">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-yellow-300 mb-2">
-              Project Funding
+              Funded by
             </h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
-              This project is proudly supported by the <strong>Institute Of Data Engineering, Analytics and Science Foundation (IDEAS)</strong>,
-              operating under the <strong>Technology Innovation Hub at the Indian Statistical Institute</strong>.
-              It is funded by the <strong>Department of Science & Technology (DST) under the National Mission on Interdisciplinary Cyber-Physical Systems (NM-ICPS)</strong>.
+              The <strong>Institute of Data Engineering, Analytics, and Science Foundation (IDEAS)</strong> operates under the
+              <strong> Technology Innovation Hub at the Indian Statistical Institute</strong>.
+              Supported by the <strong>Department of Science & Technology (DST)</strong> as part of the
+              <strong> National Mission on Interdisciplinary Cyber-Physical Systems (NM-ICPS)</strong>,
+              driving innovation and advancements in cutting-edge technologies.
             </p>
           </div>
+
+
         </div>
       </section>
 
