@@ -86,17 +86,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Decorative wave transition between sections */}
-      <div className="relative w-full -mt-16">
-        <svg
-          className="block w-full h-16 text-white dark:text-gray-800"
-          fill="currentColor"
-          preserveAspectRatio="none"
-          viewBox="0 0 1440 320"
-        >
-          <path d="M0,288L48,272C96,256,192,224,288,224C384,224,480,256,576,266.7C672,277,768,267,864,250.7C960,235,1056,213,1152,208C1248,203,1344,213,1392,218.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z" />
-        </svg>
-      </div>
+
 
       {/* Why SynGen Section */}
       <section className="container mx-auto px-6 -mt-8">
@@ -263,13 +253,15 @@ export default function Home() {
       <section className="py-6 transition-colors duration-300 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-6 flex flex-col items-center space-y-6 md:flex-row md:justify-between md:space-y-0">
           {/* Logos */}
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-12 w-full md:w-auto">
-            <CldImage
-              src="syngen/nghn1zonnzcvvajhcrcg"
-              alt="Department of Science & Technology Logo"
-              width={500} height={100}
-              className="rounded-lg"
-            />
+          <div className="flex flex-wrap justify-center  items-center gap-4 md:gap-12 w-full md:w-auto">
+            <div className='dark:bg-white p-2 rounded-lg'>
+              <CldImage
+                src="syngen/nghn1zonnzcvvajhcrcg"
+                alt="Department of Science & Technology Logo"
+                width={500} height={100}
+                className="rounded-lg"
+              />
+            </div>
             <CldImage
               src="syngen/smalghw76wubiqlvbcpe"
               alt="NM-ICPS Logo"
