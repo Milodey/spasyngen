@@ -70,7 +70,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
-            <Link href="https://syngendata.ai/studio" target="" rel="noopener noreferrer">
+            <Link href="https://studio.syngendata.ai/" target="" rel="noopener noreferrer">
               <button className="flex items-center space-x-2 px-8 py-4 bg-yellow-600 text-white rounded-full shadow-xl hover:bg-yellow-700 hover:scale-105 transform transition duration-300">
                 <span>Try SynGenData Now</span>
                 <ArrowRight className="w-5 h-5" />
