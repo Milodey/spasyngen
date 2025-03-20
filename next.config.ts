@@ -2,6 +2,9 @@
 const nextConfig = {
   // Required for static export
   trailingSlash: true, // Ensures correct static URL paths
+  experimental: {
+    appDir: true, // Ensure Next.js is using the App Router
+  },
 
   images: {
     domains: ["placekitten.com"],
