@@ -6,9 +6,26 @@ import { Star, ArrowRight } from 'lucide-react';
 import { Loader } from '@/components/Loader';
 import { CldImage } from 'next-cloudinary';
 
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    const fetchVisitorCount = async () => {
+      try {
+        const response = await fetch('/api/visitor', { method: 'POST' });
+        const data = await response.json();
+        setVisitorCount(data.count);
+      } catch (error) {
+        console.error("Error fetching visitor count:", error);
+      }
+    };
+
+    fetchVisitorCount();
+  }, []);
+
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 200);
@@ -383,8 +400,18 @@ export default function Home() {
             <p className="text-sm text-gray-500 dark:text-gray-400">
               © 2025 SynGenData Ltd. All rights reserved.
             </p>
+            <div className="border border-gray-300 dark:border-gray-600 rounded-md px-4 py-2 inline-block mt-2">
+              <h2 className="font-semibold text-gray-900 dark:text-white text-sm">
+                Total Visitors:{" "}
+                <span className="text-yellow-600 dark:text-yellow-200">
+                  {visitorCount !== null ? visitorCount : "Loading..."}
+                </span>
+              </h2>
+            </div>
           </div>
+
         </div>
+
       </footer>
 
     </div>

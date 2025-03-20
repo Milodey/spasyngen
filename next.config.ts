@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // Required for static export
+  // Required for static export
   trailingSlash: true, // Ensures correct static URL paths
 
   images: {
