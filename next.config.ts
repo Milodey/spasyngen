@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',// Required for static export
+  // output: 'export',// Required for static export
   trailingSlash: true, // Ensures correct static URL paths
   experimental: {
     appDir: true, // Ensure Next.js is using the App Router
