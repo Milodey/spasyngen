@@ -55,7 +55,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col space-y-16">
+    <div className="flex flex-col space-y-16 ">
       {/* Hero Section with Dynamic SVG Background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-400 dark:from-black dark:via-gray-900 dark:to-yellow-800 transition-colors duration-500">
         {/* Background Decorative SVG Shapes */}
@@ -310,6 +310,42 @@ export default function Home() {
 
         </div>
       </section>
+
+      <hr className=''/>
+
+      <section className="py-2 transition-colors duration-300 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-6 flex flex-col-reverse items-center md:flex-row md:space-x-8 md:items-center md:space-y-0">
+
+          {/* Text Section (Mobile: below logo) */}
+          <div className="text-center md:text-left max-w-lg px-4 w-full md:w-1/2">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-yellow-300 mb-4">
+              Supported by
+            </h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
+              The <strong>Indian Institute of Technology Guwahati (IIT Guwahati) </strong>
+              actively supports the SynGenData initiative by facilitating research collaborations,
+              knowledge sharing, and technological advancements in the field of data engineering and AI-driven synthetic data.
+            </p>
+          </div>
+
+          {/* Logo Section (Mobile: at the top with bottom padding) */}
+          <div className="flex justify-center md:justify-end items-center w-full md:w-1/2 pb-8 md:pb-0">
+            <CldImage
+              src="syngen/frxnbpnjzv56mambrmqk"
+              alt="IIT Guwahati Logo"
+              width={180}
+              height={120}
+              className="rounded-lg dark:bg-white"
+            />
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
 
 
 
