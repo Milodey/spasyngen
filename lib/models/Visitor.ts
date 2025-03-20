@@ -1,10 +1,14 @@
-import { Schema, model, models } from 'mongoose';
+import mongoose from 'mongoose';
 
-// Define Visitor Schema
-const VisitorSchema = new Schema({
-    name: { type: String, required: true, unique: true, default: 'siteVisitors' },
-    count: { type: Number, default: 0 }
+const VisitorSchema = new mongoose.Schema({
+    name: { type: String, required: true, unique: true },
+    count: { type: Number, default: 0 },
+    uniqueVisitors: [
+        {
+            ip: String,
+            date: String, // Store visit date as "YYYY-MM-DD"
+        }
+    ]
 });
 
-// Export the Mongoose model (re-use if already defined)
-export const Visitor = models.Visitor || model('Visitor', VisitorSchema);
+export const Visitor = mongoose.models.Visitor || mongoose.model('Visitor', VisitorSchema);
