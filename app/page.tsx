@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Star, ArrowRight } from 'lucide-react';
 import { Loader } from '@/components/Loader';
 import { CldImage } from 'next-cloudinary';
-import Script from 'next/script';
+// import Script from 'next/script';
 
 
 export default function Home() {
