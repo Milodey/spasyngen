@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Star, ArrowRight } from 'lucide-react';
 import { Loader } from '@/components/Loader';
 import { CldImage } from 'next-cloudinary';
+import Script from 'next/script';
 
 
 export default function Home() {
@@ -311,7 +312,7 @@ export default function Home() {
         </div>
       </section>
 
-      <hr className=''/>
+      <hr className='' />
 
       <section className="py-2 transition-colors duration-300 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-6 flex flex-col-reverse items-center md:flex-row md:space-x-8 md:items-center md:space-y-0">
@@ -449,7 +450,24 @@ export default function Home() {
         </div>
 
       </footer>
+      <div style={{ display: "none" }}>
+        <>
+          <Script
+            src="//mapmyvisitors.com/map.js?d=8pIo1DxatCrgyeeAmdc9crsQpdHQ_zPx8fpKNhwnfgw&cl=ffffff&w=a"
+            strategy="afterInteractive"
+            id="mapmyvisitors"
+          />
+          <style jsx global>{`
+      #mapmyvisitors {
+        display: none !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+      }
+    `}</style>
+        </>
 
+      </div>
     </div>
   );
 }
