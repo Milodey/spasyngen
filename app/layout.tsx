@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* ✅ GTM Script in Head */}
-        <Script id="gtm-head" strategy="afterInteractive">
+        {/* <Script id="gtm-head" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -28,12 +28,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-KMTJ8DMK');
           `}
-        </Script>
+        </Script> */}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}>
 
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMTJ8DMK"
-          height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
+        {/* <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMTJ8DMK"
+          height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript> */}
 
         <Providers>
           <Navbar />
@@ -46,6 +46,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="text/javascript"
           id="mapmyvisitors"
         /> */}
+        {/* ✅ MapMyVisitors Script (tracking enabled, map hidden) */}
+        <Script
+          src="//mapmyvisitors.com/map.js?d=8pIo1DxatCrgyeeAmdc9crsQpdHQ_zPx8fpKNhwnfgw&cl=ffffff&w=a"
+          strategy="afterInteractive"
+          id="mapmyvisitors"
+        />
+
+        {/* ✅ Hide the map element if it tries to render */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              #mapmyvisitors {
+                display: none !important;
+                width: 0 !important;
+                height: 0 !important;
+                overflow: hidden !important;
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );
