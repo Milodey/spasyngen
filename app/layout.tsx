@@ -47,25 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           id="mapmyvisitors"
         /> */}
         {/* ✅ MapMyVisitors Script (tracking enabled, map hidden) */}
-        <Script
-          src="//mapmyvisitors.com/map.js?d=8pIo1DxatCrgyeeAmdc9crsQpdHQ_zPx8fpKNhwnfgw&cl=ffffff&w=a"
-          strategy="afterInteractive"
-          id="mapmyvisitors"
-        />
-
-        {/* ✅ Hide the map element if it tries to render */}
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-              #mapmyvisitors {
-                display: none !important;
-                width: 0 !important;
-                height: 0 !important;
-                overflow: hidden !important;
-              }
-            `,
-          }}
-        />
+       
       </body>
     </html>
   );
