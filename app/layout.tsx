@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Providers } from "./providers";
-// import Script from "next/script";
+import Script from "next/script";
 // import Img from "next/image";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -46,8 +46,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="text/javascript"
           id="mapmyvisitors"
         /> */}
-        {/* ✅ MapMyVisitors Script (tracking enabled, map hidden) */}
-       
+<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-KPNCJ0VYTV"
+  strategy="afterInteractive"
+/>
+<Script
+  id="ga-inline"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-KPNCJ0VYTV');
+    `,
+  }}
+/>
       </body>
     </html>
   );
