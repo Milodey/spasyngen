@@ -21,9 +21,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           {children}
         </Providers>
-        <Script src="//mapmyvisitors.com/map.js?d=lTf7LYZCw0KHlsHgbd4S92SPLsnPT7MNwxO8zuOHAgU&cl=ffffff&w=a" strategy="afterInteractive" id="mapmyvisitors" />
-        {/* <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=lTf7LYZCw0KHlsHgbd4S92SPLsnPT7MNwxO8zuOHAgU&cl=ffffff&w=a"></script> */}
-      </body>
+        <Script
+          src="//mapmyvisitors.com/map.js?d=8pIo1DxatCrgyeeAmdc9crsQpdHQ_zPx8fpKNhwnfgw&cl=ffffff&w=a"
+          strategy="afterInteractive"
+          type="text/javascript"
+          id="mapmyvisitors"
+        />        {/* <Script
+          src="//mapmyvisitors.com/map.js?d=lTf7LYZCw0KHlsHgbd4S92SPLsnPT7MNwxO8zuOHAgU&cl=ffffff&w=a"
+          strategy="afterInteractive"
+          type="text/javascript"
+          id="mapmyvisitors"
+        /> */}
+            </body>
     </html>
   );
 }
