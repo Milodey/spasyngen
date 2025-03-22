@@ -450,24 +450,9 @@ export default function Home() {
         </div>
 
       </footer>
-      <div style={{ display: "none" }}>
-        <>
-          <Script
-            src="//mapmyvisitors.com/map.js?d=8pIo1DxatCrgyeeAmdc9crsQpdHQ_zPx8fpKNhwnfgw&cl=ffffff&w=a"
-            strategy="afterInteractive"
-            id="mapmyvisitors"
-          />
-          <style jsx global>{`
-      #mapmyvisitors {
-        display: none !important;
-        height: 0 !important;
-        width: 0 !important;
-        overflow: hidden !important;
-      }
-    `}</style>
-        </>
 
-      </div>
+
+
     </div>
   );
 }
