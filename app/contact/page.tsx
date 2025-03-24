@@ -9,7 +9,7 @@ const CalendlyWidget = () => {
     return (
         <div className="flex justify-center">
             <iframe
-                src="https://calendly.com/milo-dey-work"
+                src="https://calendly.com/contact-syngendata"
                 className="w-full max-w-2xl h-[600px] border-0 rounded-lg shadow-lg"
                 loading="lazy"
             ></iframe>
@@ -75,7 +75,9 @@ export default function Contact() {
                         <div className="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md flex flex-col items-center">
                             <Mail className="h-12 w-12 text-yellow-600 dark:text-yellow-400 mb-4" />
                             <h3 className="font-bold text-lg">Email Us</h3>
+                            <p className="text-gray-700 dark:text-gray-300">Dr. Palash Ghosh</p>
                             <p className="text-gray-700 dark:text-gray-300">palash.ghosh@iitg.ac.in</p>
+
                         </div>
                         {/* Live Chat */}
                         <div className="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md flex flex-col items-center">
