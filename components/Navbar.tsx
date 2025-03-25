@@ -68,9 +68,9 @@ export function Navbar() {
                     <Link href="/pricing" className={navigationMenuTriggerStyle()}>
                         Pricing
                     </Link>
-                    <Link href="/blog" className={navigationMenuTriggerStyle()}>
+                    {/* <Link href="/blog" className={navigationMenuTriggerStyle()}>
                         Blog
-                    </Link>
+                    </Link> */}
                     <Link href="/contact" className={navigationMenuTriggerStyle()}>
                         Contact
                     </Link>

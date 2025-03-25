@@ -76,6 +76,8 @@ export default function Contact() {
                             <Mail className="h-12 w-12 text-yellow-600 dark:text-yellow-400 mb-4" />
                             <h3 className="font-bold text-lg">Email Us</h3>
                             <p className="text-gray-700 dark:text-gray-300">Dr. Palash Ghosh</p>
+                            <p className="text-gray-700 dark:text-gray-300">Department of Mathematics, IIT Guwahati</p>
+
                             <p className="text-gray-700 dark:text-gray-300">palash.ghosh@iitg.ac.in</p>
 
                         </div>
