@@ -12,6 +12,8 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
 
   useEffect(() => {
     const fetchVisitorCount = async () => {
@@ -100,6 +102,14 @@ export default function Home() {
                 <ArrowRight className="w-5 h-5" />
               </button>
             </Link>
+            <button
+              onClick={() => setIsVideoOpen(true)}
+              className="flex items-center space-x-2 px-8 py-4 bg-yellow-600 text-white rounded-full shadow-xl hover:bg-yellow-700 hover:scale-105 transform transition duration-300"
+            >
+              <span>Watch Demo</span>
+              <ArrowRight className="w-5 h-5" />
+            </button>
+
           </div>
         </div>
       </section>
@@ -451,8 +461,39 @@ export default function Home() {
 
       </footer>
 
+      {isVideoOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+          <div className="relative w-full max-w-3xl mx-4 bg-white rounded-xl overflow-hidden shadow-2xl">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsVideoOpen(false)}
+              className="absolute top-2 right-2 text-gray-700 hover:text-red-600 z-10"
+            >
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Video */}
+            <div className="aspect-w-16 aspect-h-9">
+              <iframe
+                className="w-full h-96"
+                src="https://www.youtube.com/embed/00FM4-VLHpQ"
+                title="SynGenData Demo"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
 
 
     </div>
+
+
   );
+
+
 }
